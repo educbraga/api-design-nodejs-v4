@@ -1,5 +1,19 @@
 {
-  "dependencies": {
+  "name": "api-design-nodejs-v4",
+  "description": "https://frontendmasters.com/courses/api-design-nodejs-v4/",
+  "version": "1.0.0",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/educbraga/api-design-nodejs-v4.git"
+  },
+  "author": "Eduardo Braga",
+  "license": "ISC",
+    "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
@@ -7,5 +21,9 @@
     "prisma": "^4.12.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/educbraga/api-design-nodejs-v4/issues"
+  },
+  "homepage": "https://github.com/educbraga/api-design-nodejs-v4#readme"
 }
