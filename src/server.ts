@@ -7,6 +7,10 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use ((req, res, next) => {
+	req.shhhh_secret = "doggy"
+	next()
+})
 
 app.get('/', (req, res) => {
 	console.log('Hello from express')
