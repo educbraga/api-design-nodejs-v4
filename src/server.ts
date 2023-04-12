@@ -4,13 +4,15 @@ import morgan from 'morgan'
 
 const app = express()
 
+const customLogger = (message) => (req, res, next) => {
+	console.log(`Hello from ${message}`)
+	next()
+}
+
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
-app.use ((req, res, next) => {
-	req.shhhh_secret = "doggy"
-	next()
-})
+app.use (customLogger('customer logger'))
 
 app.get('/', (req, res) => {
 	console.log('Hello from express')
