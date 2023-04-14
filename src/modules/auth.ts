@@ -29,7 +29,6 @@ export const protect = (req, res, next) => {
 		return
 	}
 
-	console.log(bearer)
 	const [, token] = bearer.split(' ')
 
 	if (!token) {
@@ -39,12 +38,10 @@ export const protect = (req, res, next) => {
 	}
 
 	try {
-		console.log('3')
 		const user = jwt.verify(token, process.env.JWT_SECRET)
 		req.user = user
 		next()
 	} catch(e) {
-		console.log('4')
 		console.error(e)
 		res.status(401)
 		res.json({message: "not valid token"})
